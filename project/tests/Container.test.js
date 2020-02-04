@@ -7,7 +7,7 @@ describe("Test Container component", () => {
 
         let news = wrapper.find("News");
         expect(news.length).toBe(1);
-
+        
         let addItem = wrapper.find("AddItem");
         expect(addItem.length).toBe(0);
 
@@ -16,8 +16,9 @@ describe("Test Container component", () => {
 
         news = wrapper.find("News");
         expect(news.length).toBe(0);
-
+        
         addItem = wrapper.find("AddItem");
         expect(addItem.length).toBe(1);
     });
 });
+

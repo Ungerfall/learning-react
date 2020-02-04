@@ -1,33 +1,21 @@
-import React, { Component } from 'react';
-import ItemComponent from "./ItemComponent";
+import React, { useState, useEffect } from 'react';
 
-export class News extends Component {
-    constructor() {
-        super();
+import ItemComponent from './ItemComponent';
+import { API_URL } from './constants';
+import useNews from './hooks/useNews';
+import FiltersBar from './FiltersBar/FiltersBar';
 
-        this.state = {
-            news: [],
-            isLoading: true
-        }
-    }
+const News = () => {
+    const {isLoading, news} = useNews();
 
-    componentDidMount() {
-        fetch("http://localhost:4000/News")
-            .then(response => response.json())
-            .then(json => this.setState({ news: json, isLoading: false }));
-    }
-
-    render() {
-        if (this.state.isLoading) 
-            return (<h1>Loading.....</h1>);
-
-        return (<>
-            {this.state.news.map((item, index) => <ItemComponent
-                key={item.id}
-                index={index}
-                item={item} />)}
+    return (
+        <>
+            <FiltersBar />
+            {!isLoading ? news.map((item, index) => (
+                <ItemComponent key={item.id} index={index} item={item} />
+            )) : <div className="loader" />}
         </>
-        )
-    }
+    );
 };
+
 export default News;

@@ -3,7 +3,7 @@ import ItemComponent from "../src/ItemComponent";
 
 const item = {
     "id": 1,
-    "Title": "Essex Police: 39 people found dead in lorry container",
+    "Title": "Essex Police: 39 people found dead in lorry container" ,
     "Date": "2019-08-08",
     "Description": "DescTest",
     "Info": "InfoTest",
@@ -11,7 +11,7 @@ const item = {
 
 describe("Test ItemComponent component", () => {
     it("should show correctly", () => {
-        const wrapper = shallow(<ItemComponent item={item} />);
+        const wrapper = shallow(<ItemComponent item={item}  />);
 
         const title = wrapper.find(".title");
         expect(title.length).toBe(1);
