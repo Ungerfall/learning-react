@@ -4170,7 +4170,7 @@ inherits@2.0.3:
 
 ini@2.0.0:
   version "2.0.0"
-  resolved "https://registry.npmjs.org/ini/-/ini-2.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/ini/-/ini-2.0.0.tgz#e5fd556ecdd5726be978fa1001862eacb0a94bc5"
 
 ini@~1.3.0:
   version "1.3.8"
